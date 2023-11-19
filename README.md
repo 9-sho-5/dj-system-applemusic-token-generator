@@ -1,14 +1,12 @@
 # dj-system-applemusic-token-generator
 
-### 起動手順
+### MusicUserToken取得手順
+1. ライブラリのインストール
 ```
 bundle install
-ruby app.rb
 ```
 
-### 
-
-.envには下記の項目
+1. ".env"の準備
 ```
 # PRIVATE KEY
 APPLE_MUSIC_API_PRIVATE_KEY='-----BEGIN PRIVATE KEY-----
@@ -27,3 +25,11 @@ APPLE_MUSIC_API_KEY_ID=''
 # TEAM ID
 APPLE_MUSIC_API_TEAM_ID=''
 ```
+
+1. シークレットブラウザでlocalhost:4567/にアクセス
+
+1. ポップアップブロックされないように許可する
+
+1. ログインボタン押して、AppleID・Passwordでポップアップからログイン & APIの許可を行う
+
+1. 検証開くとコンソールログからMusicUaerTokenを確認できる
