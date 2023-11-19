@@ -1,5 +1,13 @@
 # dj-system-applemusic-token-generator
 
+### 必要項目
+- AppleID・Password
+- Private Key
+- Team ID
+- Key ID
+
+[Private Key・Team ID・Key ID取得に関する参考記事](https://dev.classmethod.jp/articles/ios-11-apple-music-api-intro/)
+
 ### MusicUserToken取得手順
 1. ライブラリのインストール
 ```
@@ -26,10 +34,10 @@ APPLE_MUSIC_API_KEY_ID=''
 APPLE_MUSIC_API_TEAM_ID=''
 ```
 
-3. シークレットブラウザでlocalhost:4567/にアクセス
+3. シークレットブラウザで`localhost:4567/`にアクセス
 
 4. ポップアップブロックされないように許可する
 
 5. ログインボタン押して、AppleID・Passwordでポップアップからログイン & APIの許可を行う
 
-6. 検証開くとコンソールログからMusicUaerTokenを確認できる
+6. 検証開くとコンソールログからMusicUserTokenを確認できる
