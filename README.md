@@ -21,9 +21,6 @@ APPLE_MUSIC_API_PRIVATE_KEY='-----BEGIN PRIVATE KEY-----
 ...
 -----END PRIVATE KEY-----'
 
-# MEDIA USER TOKEN
-MUSIC_USER_TOKEN=''
-
 # KEY ID
 APPLE_MUSIC_API_KEY_ID=''
 
@@ -31,10 +28,12 @@ APPLE_MUSIC_API_KEY_ID=''
 APPLE_MUSIC_API_TEAM_ID=''
 ```
 
-3. シークレットブラウザで`localhost:4567/`にアクセス
+3. 'rackup config.ru'でサーバー起動
 
-4. ポップアップブロックされないように許可する
+4. シークレットブラウザで`localhost:4567/`にアクセス
 
-5. ログインボタン押して、AppleID・Passwordでポップアップからログイン & APIの許可を行う
+5. ポップアップブロックされないように許可する
 
-6. 検証開くとコンソールログからMusicUserTokenを確認できる
+6. ログインボタン押して、AppleID・Passwordでポップアップからログイン & APIの許可を行う
+
+7. `トークンを表示する`ボタンで`アクセストークン`と`Music User Token`を確認可能
