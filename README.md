@@ -1,6 +1,14 @@
 # dj-system-applemusic-token-generator
 
-[] .envには下記の項目
+### 起動手順
+```
+bundle install
+ruby app.rb
+```
+
+### 
+
+.envには下記の項目
 ```
 # PRIVATE KEY
 APPLE_MUSIC_API_PRIVATE_KEY='-----BEGIN PRIVATE KEY-----
