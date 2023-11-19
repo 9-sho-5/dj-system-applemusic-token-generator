@@ -6,7 +6,7 @@
 bundle install
 ```
 
-1. ".env"の準備
+2. `.env`の準備
 ```
 # PRIVATE KEY
 APPLE_MUSIC_API_PRIVATE_KEY='-----BEGIN PRIVATE KEY-----
@@ -26,10 +26,10 @@ APPLE_MUSIC_API_KEY_ID=''
 APPLE_MUSIC_API_TEAM_ID=''
 ```
 
-1. シークレットブラウザでlocalhost:4567/にアクセス
+3. シークレットブラウザでlocalhost:4567/にアクセス
 
-1. ポップアップブロックされないように許可する
+4. ポップアップブロックされないように許可する
 
-1. ログインボタン押して、AppleID・Passwordでポップアップからログイン & APIの許可を行う
+5. ログインボタン押して、AppleID・Passwordでポップアップからログイン & APIの許可を行う
 
-1. 検証開くとコンソールログからMusicUaerTokenを確認できる
+6. 検証開くとコンソールログからMusicUaerTokenを確認できる
