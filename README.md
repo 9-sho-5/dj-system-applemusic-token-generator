@@ -28,7 +28,7 @@ APPLE_MUSIC_API_KEY_ID=''
 APPLE_MUSIC_API_TEAM_ID=''
 ```
 
-3. 'rackup config.ru'でサーバー起動
+3. `rackup config.ru`コマンドでサーバー起動
 
 4. シークレットブラウザで`localhost:4567/`にアクセス
 
@@ -37,3 +37,5 @@ APPLE_MUSIC_API_TEAM_ID=''
 6. ログインボタン押して、AppleID・Passwordでポップアップからログイン & APIの許可を行う
 
 7. `トークンを表示する`ボタンで`アクセストークン`と`Music User Token`を確認可能
+
+8. その他のリクエストが問題なく通るか確認する
