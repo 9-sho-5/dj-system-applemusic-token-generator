@@ -50,7 +50,7 @@ class APIRouter < Base
 
   # 指定したplaylist_idから自分のプレイリストを取得
   get '/get_playlist' do
-    @result_playlist = @@applemusic_api.get_playlist("p.xraeqeZs4ABVxR2")
+    @result_playlist = @@applemusic_api.get_playlist("p.◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯")
     erb :home
   end
 
@@ -65,7 +65,7 @@ class APIRouter < Base
   # 指定したプレイリストに指定したtrackを追加する
   get '/add_track_to_playlist' do
     track_id = "1402042897"
-    playlist_id = "p.xraeqeZs4ABVxR2" 
+    playlist_id = "p.◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯" 
     res = @@applemusic_api.add_track_to_playlist(playlist_id, track_id)
     erb :home
   end
