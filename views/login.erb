@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<title>Apple Music API</title>
-	<script src="https://js-cdn.music.apple.com/musickit/v3/musickit.js" data-web-components async></script>
-	<link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-
-<style>
-	form{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateX(-50%) translateY(-50);
-	}
-</style>
-
-<form action="/api/apple_music">
-	<input type="submit" value="ログイン">
+<form action="/api/apple_music" class="login-form">
+	<img src="https://developer.apple.com/assets/elements/icons/musickit/musickit-128x128_2x.png" alt="Music Kit Logo">
+	<div class="logo-text-wrap">
+		<h1>Apple Music API<br>Token Generator</h1>
+		<input type="submit" value="ログイン">
+	</div>
 </form>
-
-</body>
-</html>
