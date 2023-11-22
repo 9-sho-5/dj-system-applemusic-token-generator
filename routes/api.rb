@@ -31,7 +31,7 @@ class APIRouter < Base
 
   # キーワードによる検索
   get '/search' do
-    keyword = params[:keyword]
+    keyword = params[:keyword].encode(Encoding::UTF_8)
     @result_searched_data = @@applemusic_api.search(keyword)
     erb :home
   end
