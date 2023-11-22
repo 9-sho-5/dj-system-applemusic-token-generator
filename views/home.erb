@@ -1,0 +1,100 @@
+<div class="content">
+    <h1>Token Tester</h1>
+
+    <h2>Developer Tokenで利用可能なリクエスト</h2>
+
+    <h3>Search</h3>
+    <div class="wrap">
+        <form action="/api/search" method="get">
+            <input type="text" name="keyword" placeholder="Type Keyword ...">
+            <input type="submit" value="検索">
+        </form>
+        <div class="result"><%= @result_searched_data %></div>
+    </div>
+
+    <h3>Get Data</h3>
+    <div class="wrap">
+        <a href="/api/get_track">Get Track</a>
+        <div class="result"><%= @result_track %></div>
+    </div>
+
+    <h2>Developer Token & Music User Tokenで利用可能なリクエスト</h2>
+
+    <h3>Get Data</h3>
+    <div class="wrap">
+        <a href="/api/get_playlist">Get Playlist</a>
+        <div class="result"><%= @result_playlist %></div>
+    </div>
+    <div class="wrap">
+        <a href="/api/get_playlists">Get Playlists</a>
+        <div class="result"><%= @result_playlists %></div>
+    </div>
+
+    <h3>Create Playlist</h3>
+    <div class="wrap">
+        <a href="/api/create_playlist">Create Playlist</a>
+    </div>
+
+    <h3>Add Track to Playlist</h3>
+    <div class="wrap">
+        <a href="/api/add_track_to_playlist">Add Track to Playlist</a>
+    </div>
+
+    <h2>トークン</h2>
+    <div class="wrap">
+        <a href="/api/tokens">トークンを表示する</a>
+    </div>
+
+    <h3>アクセストークン</h3>
+    <div class="wrap">
+        <div class="result"><%= @access_token %></div>
+    </div>
+
+    <h3>Music User Token</h3>
+    <div class="wrap">
+        <div class="result"><%= @music_user_token %></div>
+    </div>
+
+    <script>
+
+    var music;
+
+    window.addEventListener('load', async function() {
+        // MusicKit global is now defined
+        try {
+            await MusicKit.configure({
+                developerToken: "<%= @access_token %>",
+                app: {
+                    name: 'DJGassi',
+                }
+            });
+            music = MusicKit.getInstance();
+            await music.authorize();
+
+            // 送信するためのパスを指定
+            const url = '/api/set_music_user_token';
+            // XMLHttpRequestを行うための準備
+            xmlHttpRequest = new XMLHttpRequest();
+            // onreadystatechangeが変更したとき(status 200が返ってきたとき)に、行う処理の関数を指定する
+            xmlHttpRequest.onreadystatechange = receive;
+            // postするための準備
+            xmlHttpRequest.open('POST', url, true);
+            xmlHttpRequest.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+            xmlHttpRequest.overrideMimeType('text/plain; charset=Shift_JIS');
+            xmlHttpRequest.send("musicUserToken=" + encodeURIComponent(music.musicUserToken));
+        } catch (err) {
+            // Handle configuration error
+        }
+    });
+
+    function receive() {
+        // 送信成功したとき
+        if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
+            // 文字列をJSONとしてパースする
+            response = JSON.parse(xmlHttpRequest.responseText);
+            console.log(response.message);
+        }
+    }
+
+    </script>
+</div>

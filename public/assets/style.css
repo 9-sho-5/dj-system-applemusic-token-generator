@@ -1,0 +1,22 @@
+.wrap{
+    display: flex;
+    gap: 20px;
+}
+p{
+    margin: 0;
+}
+button, a{
+    display: block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007aff;
+    color: white;
+    cursor: pointer;
+}
+input{
+    padding: 10px 15px;
+    border: 1px lightgray solid;;
+    border-radius: 10px;
+}
